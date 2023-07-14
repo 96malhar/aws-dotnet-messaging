@@ -1,0 +1,46 @@
+name: Run Benchmarks
+
+on:
+  push:
+    branches:
+      - dev
+
+permissions:
+  # deployments permission to deploy GitHub pages website
+  deployments: write
+  # contents permission to update benchmark contents in gh-pages branch
+  contents: write
+
+jobs:
+  benchamrk:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'
+
+    - name: Setup .NET Core 6.0
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore
+
+    - name: Run benchmark
+      run: dotnet run -c Release --project "./benchmark/AWS.Messaging.Benchmark"
+    
+    - name: Store benchmark result
+      uses: rhysd/github-action-benchmark@v1
+      with:
+        tool: 'benchmarkdotnet'
+        output-file-path: BenchmarkDotNet.Artifacts/results/AWS.Messaging.Benchmark.MessagingBenchmark-report-brief.json
+        # Access token to deploy GitHub Pages branch
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        # Push and deploy GitHub pages branch automatically
+        auto-push: true

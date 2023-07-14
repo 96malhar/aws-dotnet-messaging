@@ -31,6 +31,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.Messaging.Lambda", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaMessaging", "sampleapps\LambdaMessaging\LambdaMessaging.csproj", "{F74A4CF0-D814-426E-8149-46758E86AFE3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmark", "benchmark", "{011CDDFE-FF15-4DCB-BADB-32094CE78C9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.Messaging.Benchmark", "benchmark\AWS.Messaging.Benchmark\AWS.Messaging.Benchmark.csproj", "{1F4720CE-CE77-4776-9CDF-B9CDFB7E6418}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{F74A4CF0-D814-426E-8149-46758E86AFE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F74A4CF0-D814-426E-8149-46758E86AFE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F74A4CF0-D814-426E-8149-46758E86AFE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F4720CE-CE77-4776-9CDF-B9CDFB7E6418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F4720CE-CE77-4776-9CDF-B9CDFB7E6418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F4720CE-CE77-4776-9CDF-B9CDFB7E6418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F4720CE-CE77-4776-9CDF-B9CDFB7E6418}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +90,7 @@ Global
 		{A174942B-AF9C-4935-AD7B-AF651BACE63C} = {80DB2C77-6ADD-4A60-B27D-763BDF9659D3}
 		{24FA3671-8C2B-4B64-865C-68FB6237E34D} = {2D0A561B-0B97-4259-8603-3AF5437BB652}
 		{F74A4CF0-D814-426E-8149-46758E86AFE3} = {1AA8985B-897C-4BD5-9735-FD8B33FEBFFB}
+		{1F4720CE-CE77-4776-9CDF-B9CDFB7E6418} = {011CDDFE-FF15-4DCB-BADB-32094CE78C9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B2B759D-6455-4089-8173-3F1619567B36}
